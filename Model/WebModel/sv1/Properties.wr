@@ -1,6 +1,8 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Researcher" landmarks="sv1#area1" homePage="sv1#area1#page3">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="public" homePage="sv1#page1" landmarks="sv1#page4 sv1#page5">
   <OperationUnits>
-    <CreateUnit gr:x="320" gr:y="265" id="sv1#cru1" name="Create publication" entity="ent1"/>
-    <CreateUnit gr:x="315" gr:y="370" id="sv1#cru2" name="Create Comments" entity="ent3"/>
+    <LoginUnit gr:x="705" gr:y="165" id="sv1#lgu1" name="Login"/>
+    <CreateUnit gr:x="325" gr:y="410" id="sv1#cru3" name="Create new Researcher" entity="User" bulk="false">
+      <OKLink id="sv1#cru3#oln3" name="OKFlow3" to="sv1#page4#meu2" automaticCoupling="true"/>
+    </CreateUnit>
   </OperationUnits>
 </SiteView>
