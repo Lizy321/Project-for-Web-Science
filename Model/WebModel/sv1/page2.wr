@@ -1,0 +1,47 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="330" gr:y="145" id="sv1#page2" name="Add Publication">
+  <ContentUnits>
+    <EntryUnit id="sv1#page2#enu5" name="add" linkOrder="sv1#page2#enu5#ln3" gr:x="0" gr:y="0" fieldOrder="sv1#page2#enu5#fld12 sv1#page2#enu5#fld13 sv1#page2#enu5#fld14 sv1#page2#enu5#fld15 sv1#page2#enu5#fld16 sv1#page2#enu5#fld17 sv1#page2#enu5#fld18">
+      <Field id="sv1#page2#enu5#fld12" name="Title" type="string" modifiable="true"/>
+      <Link id="sv1#page2#enu5#ln3" name="add" to="sv1#cru1" type="normal" validate="true">
+        <LinkParameter id="sv1#page2#enu5#ln3#par12" name="Abstract_abstract" source="sv1#page2#enu5#fld16" target="sv1#cru1.ent1#att9"/>
+        <LinkParameter id="sv1#page2#enu5#ln3#par13" name="Description_description" source="sv1#page2#enu5#fld18" target="sv1#cru1.ent1#att7"/>
+        <LinkParameter id="sv1#page2#enu5#ln3#par14" name="Author_pubAuthor" source="sv1#page2#enu5#fld13" target="sv1#cru1.ent1#att3"/>
+        <LinkParameter id="sv1#page2#enu5#ln3#par15" name="Title_pubTitle" source="sv1#page2#enu5#fld12" target="sv1#cru1.ent1#att2"/>
+        <LinkParameter id="sv1#page2#enu5#ln3#par16" name="XML Form_PASSING" source="xmlForm" passing="true"/>
+      </Link>
+      <Field id="sv1#page2#enu5#fld13" name="Author" type="string" modifiable="true"/>
+      <Field id="sv1#page2#enu5#fld14" name="Venue of Publication" type="string" modifiable="true"/>
+      <Field id="sv1#page2#enu5#fld15" name="Date of Pulishing" type="timestamp" modifiable="true"/>
+      <Field id="sv1#page2#enu5#fld16" name="Abstract" type="text" modifiable="true"/>
+      <Field id="sv1#page2#enu5#fld17" name="Keywords" type="string" modifiable="true"/>
+      <Field id="sv1#page2#enu5#fld18" name="Description" type="string" modifiable="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page2#enu5">
+          <layout:Link link="sv1#page2#enu5#ln3"/>
+          <layout:Field field="sv1#page2#enu5#fld12"/>
+          <layout:Field field="sv1#page2#enu5#fld13"/>
+          <layout:Field field="sv1#page2#enu5#fld14"/>
+          <layout:Field field="sv1#page2#enu5#fld15"/>
+          <layout:Field field="sv1#page2#enu5#fld16"/>
+          <layout:Field field="sv1#page2#enu5#fld17"/>
+          <layout:Field field="sv1#page2#enu5#fld18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

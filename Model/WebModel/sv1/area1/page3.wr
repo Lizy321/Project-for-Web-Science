@@ -1,0 +1,75 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#area1#page3" name="Collection" gr:x="0" gr:y="0" linkOrder="sv1#area1#page3#ln4 sv1#area1#page3#ln9">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page3#inu1" name="Collection" entity="ent1" displayAttributes="ent1#att2" distinct="false" linkOrder="sv1#area1#page3#inu1#ln6">
+      <Link id="sv1#area1#page3#inu1#ln6" name="Show Details" to="sv1#page4#dau2" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page3#inu1#ln6#par17" name="oid_KeyCondition2 [oid]" source="data[].ent1#att1" target="sv1#page4#dau2#su3#kcond2.ent1#att1"/>
+        <LinkParameter id="sv1#area1#page3#inu1#ln6#par18" name="oid_PASSING" source="data[].ent1#att1" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page3#inu1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Link link="sv1#area1#page3#inu1#ln6"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv1#area1#page3#ln4" name="add publications" to="sv1#page2" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv1#area1#page3#ln9" name="Notification" to="sv1#page5#mdu5" automaticCoupling="true" type="normal" validate="true"/>
+</Page>
