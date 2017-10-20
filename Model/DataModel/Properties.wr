@@ -50,7 +50,7 @@
   </Relationship>
   <db:Database id="db2" name="WSE" type="PostgreSQL 9" url="jdbc:postgresql://localhost:5432/WSE" username="postgres" password="0224" schema="public">
   </db:Database>
-  <Entity gr:x="15" gr:y="380" id="ent1" name="Publication" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att20" db:database="db2" db:table="publication">
+  <Entity gr:x="15" gr:y="370" id="ent1" name="Publication" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att20" db:database="db2" db:table="publication">
     <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent1#att2" name="Title" type="string" db:column="title" key="false"/>
     <Attribute id="ent1#att4" name="Venue" type="string" db:column="venue" key="false"/>
@@ -60,7 +60,7 @@
     <Attribute id="ent1#att9" name="PDF" type="blob" contentType="application/pdf" db:column="pdf"/>
     <Attribute id="ent1#att20" name="First Author" type="string" db:column="first_author"/>
   </Entity>
-  <Entity gr:x="290" gr:y="345" id="ent2" name="Collection" duration="persistent" db:database="db2" db:table="collection" attributeOrder="ent2#att10 ent2#att13 ent2#att14 ent2#att15 ent2#att16">
+  <Entity gr:x="240" gr:y="495" id="ent2" name="Collection" duration="persistent" db:database="db2" db:table="collection" attributeOrder="ent2#att10 ent2#att13 ent2#att14 ent2#att15 ent2#att16">
     <Attribute id="ent2#att10" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent2#att13" name="Title" type="string" db:column="title"/>
     <Attribute id="ent2#att14" name="Description" type="text" contentType="text/plain" db:column="description"/>

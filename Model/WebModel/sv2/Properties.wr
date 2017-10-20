@@ -1,10 +1,14 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Researcher" homePage="sv2#page2" landmarks="sv2#page2 sv2#lou1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Researcher" landmarks="sv2#page2 sv2#page6 sv2#lou1">
   <OperationUnits>
-    <LogoutUnit gr:x="385" gr:y="55" id="sv2#lou1" name="Logout" siteView="sv1" landmark="true"/>
-    <CreateUnit id="sv2#cru1" name="Create Comments" gr:x="695" gr:y="530" entity="ent3" skipBlankRecords="false"/>
-    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="70" gr:y="595" entity="ent1">
-      <Link id="sv2#cru2#ln52" name="OKFlow4" to="sv2#page11#dau5" automaticCoupling="true" type="transport"/>
+    <LogoutUnit gr:x="640" gr:y="45" id="sv2#lou1" name="Logout" siteView="sv1" landmark="true"/>
+    <CreateUnit id="sv2#cru1" name="Create Comments" gr:x="695" gr:y="655" entity="ent3" skipBlankRecords="false"/>
+    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="85" gr:y="595" entity="ent1">
+      <OKLink id="sv2#cru2#oln4" name="OKFlow4" to="sv2#page11#dau5" automaticCoupling="true"/>
     </CreateUnit>
-    <CreateUnit gr:x="-155" gr:y="395" id="sv2#cru4" name="Create Collection" entity="ent2"/>
+    <CreateUnit gr:x="-200" gr:y="380" id="sv2#cru4" name="Create Collection" entity="ent2">
+      <OKLink id="sv2#cru4#oln2" name="OKFlow2" to="sv2#page2#dau3">
+        <LinkParameter id="sv2#cru4#oln2#par11" name="oid_PASSING_KeyCondition3 [oid]" sourceLinkParameter="sv2#page10#enu7#ln53#par8" target="sv2#page2#dau3#su5#kcond3.userOID"/>
+      </OKLink>
+    </CreateUnit>
   </OperationUnits>
 </SiteView>

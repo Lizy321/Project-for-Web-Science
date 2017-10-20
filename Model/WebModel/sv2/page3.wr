@@ -11,7 +11,9 @@
         <RelationshipRoleCondition id="sv2#page3#pwu2#su2#rcond1" name="show publications in a certain collection" predicate="in" implied="false" role="rel7#role14"/>
       </Selector>
       <SortAttribute attribute="ent1#att6" order="descending"/>
-      <Link id="sv2#page3#pwu2#ln46" name="Detail" to="sv2#page11#dau5" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page3#pwu2#ln46" name="Detail" to="sv2#page11#dau5" type="normal" validate="true">
+        <LinkParameter id="sv2#page3#pwu2#ln46#par15" name="oid_KeyCondition2 [oid]" source="data[].ent1#att1" target="sv2#page11#dau5#su14#kcond7.ent1#att1"/>
+      </Link>
     </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

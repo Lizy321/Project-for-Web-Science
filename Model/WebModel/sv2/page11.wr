@@ -8,6 +8,9 @@
         <LinkParameter id="sv2#page11#dau5#ln44#par38" name="Owner.oid_Authors of thsi publication [oid]" source="data.ent1#att1" target="sv2#page11#inu2#su16#rcond12.userOID"/>
       </Link>
       <Link id="sv2#page11#dau5#ln51" name="Flow26" to="sv2#page11#mdu5" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page11#dau5#ln4" name="Flow4" to="sv2#cru1" type="transport" validate="true">
+        <LinkParameter id="sv2#page11#dau5#ln4#par17" name="oid_Publication.oid(Comment on Publication)" source="data.ent1#att1" target="sv2#cru1.rel3#role5.ent1#att1"/>
+      </Link>
     </DataUnit>
     <IndexUnit id="sv2#page11#inu2" name="Authors" gr:x="185" gr:y="0" entity="User" displayAttributes="email User#att3">
       <Selector id="sv2#page11#inu2#su16" defaultPolicy="fill" booleanOperator="and">
@@ -30,6 +33,9 @@
       </Selector>
       <SortAttribute attribute="ent3#att18" order="descending"/>
     </MultiDataUnit>
+    <GetUnit id="sv2#page11#gtu8" name="Get7" gr:x="220" gr:y="190" contextParameters="UserCtxParam">
+      <Link id="sv2#page11#gtu8#ln18" name="Flow18" to="sv2#cru1" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -161,6 +167,20 @@
           <layout:Attribute attribute="rel4#role7.email"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

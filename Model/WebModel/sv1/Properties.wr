@@ -1,8 +1,20 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="public" homePage="sv1#page1" landmarks="sv1#page4 sv1#page5">
   <OperationUnits>
-    <LoginUnit gr:x="705" gr:y="165" id="sv1#lgu1" name="Login"/>
+    <LoginUnit gr:x="740" gr:y="310" id="sv1#lgu1" name="Login"/>
     <CreateUnit gr:x="325" gr:y="410" id="sv1#cru3" name="Create new Researcher" entity="User" bulk="false">
-      <OKLink id="sv1#cru3#oln3" name="OKFlow3" to="sv1#page4#meu2" automaticCoupling="true"/>
+      <OKLink id="sv1#cru3#oln3" name="OKFlow3" to="sv1#cru5">
+        <LinkParameter id="sv1#cru3#oln3#par35" name="All the publications uploeded by me_Description" sourceValue="All the publications uploeded by me" target="sv1#cru5.ent2#att14"/>
+        <LinkParameter id="sv1#cru3#oln3#par36" name="oid_Researcher.oid(Creator)" source="userOIDArray" target="sv1#cru5.rel6#role11.userOID"/>
+        <LinkParameter id="sv1#cru3#oln3#par37" name="My Upload_Title" sourceValue="My Upload" target="sv1#cru5.ent2#att13"/>
+        <LinkParameter id="sv1#cru3#oln3#par71" name="password_PASSING" source="passwordArray" passing="true"/>
+        <LinkParameter id="sv1#cru3#oln3#par72" name="userName_PASSING" source="userNameArray" passing="true"/>
+      </OKLink>
+    </CreateUnit>
+    <CreateUnit gr:x="565" gr:y="445" id="sv1#cru5" name="Create Default Collection" entity="ent2">
+      <OKLink id="sv1#cru5#oln12" name="OKFlow12" to="sv1#lgu1">
+        <LinkParameter id="sv1#cru5#oln12#par73" name="userName_PASSING_Username" sourceLinkParameter="sv1#cru3#oln3#par72" target="sv1#lgu1.username"/>
+        <LinkParameter id="sv1#cru5#oln12#par74" name="password_PASSING_Password" sourceLinkParameter="sv1#cru3#oln3#par71" target="sv1#lgu1.password"/>
+      </OKLink>
     </CreateUnit>
   </OperationUnits>
 </SiteView>
