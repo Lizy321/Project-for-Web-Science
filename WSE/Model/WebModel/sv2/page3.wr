@@ -4,14 +4,20 @@
       <Selector id="sv2#page3#dau1#su1" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page3#dau1#su1#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
       </Selector>
-      <Link id="sv2#page3#dau1#ln1" name="Flow1" to="sv2#page3#pwu2" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#page3#dau1#ln1" name="Flow1" to="sv2#page3#pwu2" type="transport" validate="true">
+        <LinkParameter id="sv2#page3#dau1#ln1#par75" name="oid_collection_CollectionToPublication [oid_collection]" source="data.ent2#att10" target="sv2#page3#pwu2#su2#rcond1.ent2#att10"/>
+        <LinkParameter id="sv2#page3#dau1#ln1#par76" name="Creator.oid_researcher_PASSING" source="data.rel6#role11_userOID" passing="true"/>
+        <LinkParameter id="sv2#page3#dau1#ln1#par77" name="oid_collection_PASSING" source="data.ent2#att10" passing="true"/>
+      </Link>
     </DataUnit>
-    <PowerIndexUnit gr:x="0" gr:y="100" id="sv2#page3#pwu2" name="Publication in this Collection" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att8" linkOrder="sv2#page3#pwu2#ln46">
+    <PowerIndexUnit gr:x="0" gr:y="115" id="sv2#page3#pwu2" name="Publication in this Collection" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att4 ent1#att6 ent1#att8" linkOrder="sv2#page3#pwu2#ln46">
       <Selector id="sv2#page3#pwu2#su2" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv2#page3#pwu2#su2#rcond1" name="show publications in a certain collection" predicate="in" implied="false" role="rel7#role14"/>
+        <RelationshipRoleCondition id="sv2#page3#pwu2#su2#rcond1" name="CollectionToPublication" predicate="in" implied="false" role="rel7#role14"/>
       </Selector>
       <SortAttribute attribute="ent1#att6" order="descending"/>
-      <Link id="sv2#page3#pwu2#ln46" name="Detail" to="sv2#page11#dau5" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page3#pwu2#ln46" name="Detail" to="sv2#page11#dau5" type="normal" validate="true">
+        <LinkParameter id="sv2#page3#pwu2#ln46#par15" name="oid_KeyCondition2 [oid]" source="data[].ent1#att1" target="sv2#page11#dau5#su14#kcond7.ent1#att1"/>
+      </Link>
     </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

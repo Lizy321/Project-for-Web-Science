@@ -1,20 +1,23 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page11" name="Publication Page" protected="false" gr:x="535" gr:y="210">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page11" name="Publication Page" protected="false" gr:x="530" gr:y="210">
   <ContentUnits>
-    <DataUnit id="sv2#page11#dau5" name="Publication Details" gr:x="15" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att20 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att9">
+    <DataUnit id="sv2#page11#dau5" name="Publication Details" gr:x="20" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att20 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att9">
       <Selector id="sv2#page11#dau5#su14" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page11#dau5#su14#kcond7" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv2#page11#dau5#ln44" name="Flow42" to="sv2#page11#inu2" type="transport" validate="true">
-        <LinkParameter id="sv2#page11#dau5#ln44#par38" name="Owner.oid_Authors of thsi publication [oid]" source="data.ent1#att1" target="sv2#page11#inu2#su16#rcond12.userOID"/>
+        <LinkParameter id="sv2#page11#dau5#ln44#par34" name="First Author_Authors of thsi publication [oid]" source="data.ent1#att20" target="sv2#page11#inu2#su16#rcond12.userOID"/>
       </Link>
-      <Link id="sv2#page11#dau5#ln51" name="Flow26" to="sv2#page11#mdu5" type="transport" automaticCoupling="true" validate="true"/>
+      <Link id="sv2#page11#dau5#ln4" name="Flow4" to="sv2#cru1" type="transport" validate="true">
+        <LinkParameter id="sv2#page11#dau5#ln4#par17" name="oid_Publication.oid(Comment on Publication)" source="data.ent1#att1" target="sv2#cru1.rel3#role5.ent1#att1"/>
+      </Link>
+      <Link id="sv2#page11#dau5#ln13" name="Flow13" to="sv2#page11#pwu3" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
-    <IndexUnit id="sv2#page11#inu2" name="Authors" gr:x="185" gr:y="0" entity="User" displayAttributes="email User#att3">
+    <IndexUnit id="sv2#page11#inu2" name="Authors" gr:x="190" gr:y="0" entity="User" displayAttributes="email User#att3">
       <Selector id="sv2#page11#inu2#su16" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page11#inu2#su16#rcond12" name="Authors of thsi publication" predicate="in" implied="false" role="rel1#role2.rel1#role1"/>
       </Selector>
     </IndexUnit>
-    <EntryUnit id="sv2#page11#enu6" name="Add Comments" linkOrder="sv2#page11#enu6#ln48" gr:x="105" gr:y="120">
+    <EntryUnit id="sv2#page11#enu6" name="Add Comments" linkOrder="sv2#page11#enu6#ln48" gr:x="110" gr:y="120">
       <Field id="sv2#page11#enu6#fld28" name="Title" type="string" modifiable="true"/>
       <Field id="sv2#page11#enu6#fld29" name="Timestamp" type="timestamp" modifiable="true" preloaded="false" hidden="false"/>
       <Field id="sv2#page11#enu6#fld30" name="Content" type="text" modifiable="true" contentType="text/plain"/>
@@ -24,12 +27,18 @@
         <LinkParameter id="sv2#page11#enu6#ln48#par47" name="Title_Title" source="sv2#page11#enu6#fld28" target="sv2#cru1.ent3#att17"/>
       </Link>
     </EntryUnit>
-    <MultiDataUnit id="sv2#page11#mdu5" name="Comments" gr:x="0" gr:y="125" entity="ent3" displayAttributes="ent3#att18 ent3#att17 ent3#att19 rel4#role7.email" distinct="false">
-      <Selector id="sv2#page11#mdu5#su17" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv2#page11#mdu5#su17#rcond13" name="RoleCondition8" predicate="in" implied="false" role="rel3#role6"/>
+    <GetUnit id="sv2#page11#gtu8" name="Get7" gr:x="225" gr:y="190" contextParameters="UserCtxParam">
+      <Link id="sv2#page11#gtu8#ln18" name="Flow18" to="sv2#cru1" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <PowerIndexUnit gr:x="0" gr:y="155" id="sv2#page11#pwu3" name="Comments" sortable="true" checkable="false" useCountQuery="false" entity="ent3" linkOrder="sv2#page11#pwu3#ln11" displayAttributes="ent3#att17 ent3#att18 ent3#att19 rel4#role7.email">
+      <Link id="sv2#page11#pwu3#ln11" name="delete" to="sv2#dlu1" type="normal" validate="true">
+        <LinkParameter id="sv2#page11#pwu3#ln11#par39" name="oid_KeyCondition4 [oid]" source="data[].ent3#att12" target="sv2#dlu1#su4#kcond4.ent3#att12"/>
+      </Link>
+      <DefaultSortAttribute attribute="ent3#att18" order="descending"/>
+      <Selector id="sv2#page11#pwu3#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page11#pwu3#su6#rcond3" name="RoleCondition3" predicate="in" implied="false" role="rel3#role6"/>
       </Selector>
-      <SortAttribute attribute="ent3#att18" order="descending"/>
-    </MultiDataUnit>
+    </PowerIndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -153,10 +162,25 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page11#mdu5">
-          <layout:Attribute attribute="ent3#att18"/>
+        <layout:Unit unitId="sv2#page11#pwu3">
+          <layout:Link link="sv2#page11#pwu3#ln11"/>
           <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att18"/>
           <layout:Attribute attribute="ent3#att19"/>
           <layout:Attribute attribute="rel4#role7.email"/>
         </layout:Unit>
@@ -174,4 +198,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Variable id="sv2#page11#var1" name="user" unitId="sv2#page11#gtu8" parameter="sv2#page11#gtu8.UserCtxParam"/>
 </Page>

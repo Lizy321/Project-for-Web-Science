@@ -1,0 +1,113 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="255" gr:y="655" id="sv2#page6" name="Library" landmark="true">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page6#seu3" name="Search" gr:x="15" gr:y="115" entity="ent1">
+      <Link id="sv2#page6#seu3#ln24" name="Flow20" to="sv2#page6#enu2" type="transport" validate="true">
+        <LinkParameter id="sv2#page6#seu3#ln24#par86" name="oid_publication_Key Condition [oid_publication]" source="ent1#att1Array" target="sv2#page6#enu2.ent1#att1"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#page6#enu2" name="search" gr:x="0" gr:y="0" fieldOrder="sv2#page6#enu2#fld8 sv2#page6#enu2#fld9 sv2#page6#enu2#fld10 sv2#page6#enu2#fld11 sv2#page6#enu2#fld21" entity="ent1" linkOrder="sv2#page6#enu2#ln40">
+      <Field id="sv2#page6#enu2#fld8" name="title" type="string" modifiable="true" attribute="ent1#att2"/>
+      <Field id="sv2#page6#enu2#fld9" name="year" type="integer" modifiable="true"/>
+      <Field id="sv2#page6#enu2#fld10" name="author" type="string" modifiable="true"/>
+      <Field id="sv2#page6#enu2#fld11" name="abstract" type="text" modifiable="true"/>
+      <Link id="sv2#page6#enu2#ln40" name="search" to="sv2#page6#pwu9" type="normal" validate="true">
+        <LinkParameter id="sv2#page6#enu2#ln40#par111" name="abstract_abstract" source="sv2#page6#enu2#fld11" target="sv2#page6#pwu9#su15#acond21"/>
+        <LinkParameter id="sv2#page6#enu2#ln40#par112" name="author_author" source="sv2#page6#enu2#fld10" target="sv2#page6#pwu9#su15#acond19"/>
+        <LinkParameter id="sv2#page6#enu2#ln40#par113" name="title_title" source="sv2#page6#enu2#fld8" target="sv2#page6#pwu9#su15#acond18"/>
+        <LinkParameter id="sv2#page6#enu2#ln40#par114" name="year_year" source="sv2#page6#enu2#fld9" target="sv2#page6#pwu9#su15#acond20"/>
+      </Link>
+      <Field id="sv2#page6#enu2#fld21" name="keyword" type="string" modifiable="true"/>
+    </EntryUnit>
+    <PowerIndexUnit id="sv2#page6#pwu9" name="search publication" linkOrder="sv2#page6#pwu9#ln38" gr:x="150" gr:y="10" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att8 ent1#att20">
+      <Selector id="sv2#page6#pwu9#su15" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="sv2#page6#pwu9#su15#acond18" name="title" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent1#att2"/>
+        <AttributesCondition id="sv2#page6#pwu9#su15#acond19" name="author" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent1#att20"/>
+        <AttributesCondition id="sv2#page6#pwu9#su15#acond20" name="year" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att6"/>
+        <AttributesCondition id="sv2#page6#pwu9#su15#acond21" name="abstract" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att7" ignoreCase="true"/>
+      </Selector>
+      <Link id="sv2#page6#pwu9#ln38" name="detail" to="sv2#page11#dau5" type="normal" validate="true">
+        <LinkParameter id="sv2#page6#pwu9#ln38#par110" name="oid_publication_KeyCondition2 [oid_publication]" source="data[].ent1#att1" target="sv2#page11#dau5#su14#kcond7.ent1#att1"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Grid containerType="cell">
+          <layout:Row>
+            <layout:Cell>
+              <layout:Unit unitId="sv2#page6#enu2">
+                <layout:Link link="sv2#page6#enu2#ln40"/>
+                <layout:Field field="sv2#page6#enu2#fld8"/>
+                <layout:Field field="sv2#page6#enu2#fld9"/>
+                <layout:Field field="sv2#page6#enu2#fld10"/>
+                <layout:Field field="sv2#page6#enu2#fld11"/>
+                <layout:Field field="sv2#page6#enu2#fld21"/>
+              </layout:Unit>
+            </layout:Cell>
+          </layout:Row>
+        </layout:Grid>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page6#pwu9">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att20"/>
+          <layout:Link link="sv2#page6#pwu9#ln38"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
