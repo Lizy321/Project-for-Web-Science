@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page9" name="Upload Publication" gr:x="-45" gr:y="415" landmark="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page9" name="Upload Publication" gr:x="-215" gr:y="415" landmark="false">
   <ContentUnits>
-    <EntryUnit id="sv2#page9#enu3" name="Please fill in the details" linkOrder="sv2#page9#enu3#ln27" gr:x="0" gr:y="0" entity="ent1" fieldOrder="sv2#page9#enu3#fld31 sv2#page9#enu3#fld38 sv2#page9#enu3#fld37 sv2#page9#enu3#fld32 sv2#page9#enu3#fld33 sv2#page9#enu3#fld34 sv2#page9#enu3#fld35 sv2#page9#enu3#fld36">
+    <EntryUnit id="sv2#page9#enu3" name="Please fill in the details" linkOrder="sv2#page9#enu3#ln27" gr:x="170" gr:y="0" entity="ent1" fieldOrder="sv2#page9#enu3#fld31 sv2#page9#enu3#fld38 sv2#page9#enu3#fld37 sv2#page9#enu3#fld32 sv2#page9#enu3#fld33 sv2#page9#enu3#fld34 sv2#page9#enu3#fld35 sv2#page9#enu3#fld36 sv2#page9#enu3#msfld1 sv2#page9#enu3#sfld1">
       <Link id="sv2#page9#enu3#ln27" name="add" to="sv2#cru2" type="normal" validate="true">
         <LinkParameter id="sv2#page9#enu3#ln27#par9" name="Abstract_abstract" source="sv2#page9#enu3#fld36" target="sv2#cru2.ent1#att9"/>
         <LinkParameter id="sv2#page9#enu3#ln27#par10" name="Description_description" source="sv2#page9#enu3#fld34" target="sv2#cru2.ent1#att7"/>
@@ -11,6 +11,9 @@
         <LinkParameter id="sv2#page9#enu3#ln27#par51" name="Venue_Venue" source="sv2#page9#enu3#fld32" target="sv2#cru2.ent1#att4"/>
         <LinkParameter id="sv2#page9#enu3#ln27#par52" name="Year_Year" source="sv2#page9#enu3#fld33" target="sv2#cru2.ent1#att6"/>
         <LinkParameter id="sv2#page9#enu3#ln27#par53" name="First Author_First Author" source="sv2#page9#enu3#fld38" target="sv2#cru2.ent1#att20"/>
+        <LinkParameter id="sv2#page9#enu3#ln27#par3" name="Save to..._Collection.oid(collected)" source="sv2#page9#enu3#msfld1" target="sv2#cru2.rel7#role13.ent2#att10"/>
+        <LinkParameter id="sv2#page9#enu3#ln27#par40" name="Key [oid]_Researcher.oid(Owner)" target="sv2#cru2.rel2#role3.userOID" sourceLinkParameter="sv2#page2#dau3#ln9#par33"/>
+        <LinkParameter id="sv2#page9#enu3#ln27#par65" name="Save to..._PASSING" source="sv2#page9#enu3#msfld1" passing="true"/>
       </Link>
       <Field id="sv2#page9#enu3#fld31" name="Title" type="string" modifiable="true" attribute="ent1#att2"/>
       <Field id="sv2#page9#enu3#fld32" name="Venue" type="string" modifiable="true" attribute="ent1#att4"/>
@@ -20,7 +23,21 @@
       <Field id="sv2#page9#enu3#fld36" name="PDF" type="blob" modifiable="true" contentType="application/pdf" attribute="ent1#att9"/>
       <Field id="sv2#page9#enu3#fld37" type="string" modifiable="true" name="Other Authors"/>
       <Field id="sv2#page9#enu3#fld38" attribute="ent1#att7" type="string" modifiable="true" name="First Author"/>
+      <MultiSelectionField id="sv2#page9#enu3#msfld1" name="Save to..." type="string" role="rel7#role13"/>
+      <SelectionField id="sv2#page9#enu3#sfld1" name="Save list" type="string" role="rel7#role13"/>
     </EntryUnit>
+    <SelectorUnit gr:x="130" gr:y="115" id="sv2#page9#seu1" name="Collection" entity="ent2" distinctAttributes="ent2#att13">
+      <Link id="sv2#page9#seu1#ln2" name="Flow2" to="sv2#page9#enu3" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#seu1#ln2#par4" name="Title_Save to... [label]" source="ent2#att13Array" target="sv2#page9#enu3#msfld1_label"/>
+        <LinkParameter id="sv2#page9#seu1#ln2#par5" name="Title_Save to... [output]" source="ent2#att10Array" target="sv2#page9#enu3#msfld1_output"/>
+        <LinkParameter id="sv2#page9#seu1#ln2#par42" name="1_Save to... - Preselection" target="sv2#page9#enu3#msfld1_presel" blank="true"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit gr:x="0" gr:y="85" id="sv2#page9#gtu4" name="Get4" contextParameters="UserCtxParam">
+      <Link id="sv2#page9#gtu4#ln17" name="Flow17" to="sv2#page9#seu1" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#gtu4#ln17#par70" name="UserCtxParam.oid_researcher_PASSING" source="sv2#page9#gtu4.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -35,6 +52,8 @@
           <layout:Field field="sv2#page9#enu3#fld34"/>
           <layout:Field field="sv2#page9#enu3#fld35"/>
           <layout:Field field="sv2#page9#enu3#fld36"/>
+          <layout:Field field="sv2#page9#enu3#msfld1"/>
+          <layout:Field field="sv2#page9#enu3#sfld1"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -49,5 +68,21 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
+  <Variable id="sv2#page9#var2" name="user" unitId="sv2#page9#gtu4" parameter="sv2#page9#gtu4.UserCtxParam"/>
+  <Variable id="sv2#page9#var3" name="collection" unitId="sv2#page9#seu1" parameter="ent2#att10Array"/>
 </Page>

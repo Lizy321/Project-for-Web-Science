@@ -1,14 +1,35 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Researcher" landmarks="sv2#page2 sv2#page6 sv2#lou1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Researcher" landmarks="sv2#page2 sv2#page6 sv2#lou1 sv2#page7" homePage="sv2#page2">
   <OperationUnits>
-    <LogoutUnit gr:x="640" gr:y="45" id="sv2#lou1" name="Logout" siteView="sv1" landmark="true"/>
+    <LogoutUnit gr:x="280" gr:y="10" id="sv2#lou1" name="Logout" siteView="sv1" landmark="true"/>
     <CreateUnit id="sv2#cru1" name="Create Comments" gr:x="695" gr:y="655" entity="ent3" skipBlankRecords="false"/>
-    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="85" gr:y="595" entity="ent1">
-      <OKLink id="sv2#cru2#oln4" name="OKFlow4" to="sv2#page11#dau5" automaticCoupling="true"/>
+    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="90" gr:y="645" entity="ent1">
+      <OKLink id="sv2#cru2#oln7" name="OKFlow7" to="sv2#cnu1">
+        <LinkParameter id="sv2#cru2#oln7#par64" name="oid_publication_KeyCondition5 [oid_publication] [Publication] [Source]" source="ent1#att1Array" target="sv2#cnu1#su7#kcond5.ent1#att1"/>
+        <LinkParameter id="sv2#cru2#oln7#par66" name="Save to..._PASSING_KeyCondition6 [oid_collection] [Collection] [Target]" sourceLinkParameter="sv2#page9#enu3#ln27#par65" target="sv2#cnu1#su8#kcond6.ent2#att10"/>
+      </OKLink>
     </CreateUnit>
-    <CreateUnit gr:x="-200" gr:y="380" id="sv2#cru4" name="Create Collection" entity="ent2">
+    <CreateUnit gr:x="-250" gr:y="325" id="sv2#cru4" name="Create Collection" entity="ent2">
       <OKLink id="sv2#cru4#oln2" name="OKFlow2" to="sv2#page2#dau3">
         <LinkParameter id="sv2#cru4#oln2#par11" name="oid_PASSING_KeyCondition3 [oid]" sourceLinkParameter="sv2#page10#enu7#ln53#par8" target="sv2#page2#dau3#su5#kcond3.userOID"/>
       </OKLink>
     </CreateUnit>
+    <DeleteUnit gr:x="450" gr:y="550" id="sv2#dlu1" name="Delete Comments" entity="ent3">
+      <Selector id="sv2#dlu1#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu1#su4#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+    </DeleteUnit>
+    <ConnectUnit gr:x="165" gr:y="505" id="sv2#cnu1" name="Publication_Collection" relationship="rel7#role13">
+      <SourceSelector id="sv2#cnu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu1#su7#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#cnu1#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu1#su8#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#cnu1#oln6" name="OKFlow6" to="sv2#page11#dau5">
+        <LinkParameter id="sv2#cnu1#oln6#par67" name="Source oid_publication [Publication]_KeyCondition2 [oid_publication]" source="sourceent1#att1" target="sv2#page11#dau5#su14#kcond7.ent1#att1"/>
+        <LinkParameter id="sv2#cnu1#oln6#par68" name="Source oid_publication [Publication]_PASSING" source="sourceent1#att1" passing="true"/>
+        <LinkParameter id="sv2#cnu1#oln6#par69" name="Target oid_collection [Collection]_PASSING" source="targetent2#att10" passing="true"/>
+      </OKLink>
+    </ConnectUnit>
   </OperationUnits>
 </SiteView>

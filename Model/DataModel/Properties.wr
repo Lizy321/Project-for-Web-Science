@@ -1,6 +1,6 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
   <Entity id="User" name="Researcher" duration="persistent" gr:x="20" gr:y="90" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att3 User#att5" db:database="db2" db:table="researcher">
-    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="oid_researcher" id="userOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="userName" id="userName" type="string" db:column="username"/>
     <Attribute name="password" id="password" type="password" db:column="password"/>
     <Attribute name="Name" id="email" type="string" db:column="name"/>
@@ -8,11 +8,11 @@
     <Attribute id="User#att5" name="Keywords" type="string" db:column="keywords"/>
   </Entity>
   <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="110" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db2" db:table="group">
-    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="oid_group" id="groupOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
   <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="130" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db2" db:table="module">
-    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="oid_module" id="moduleOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
     <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
   </Entity>
@@ -48,10 +48,10 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db2" name="WSE" type="PostgreSQL 9" url="jdbc:postgresql://localhost:5432/WSE" username="postgres" password="0224" schema="public">
+  <db:Database id="db2" name="WSE" type="PostgreSQL 9" url="jdbc:postgresql://localhost:5432/WSE" username="postgres" password="123" schema="public">
   </db:Database>
   <Entity gr:x="15" gr:y="370" id="ent1" name="Publication" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att9 ent1#att20" db:database="db2" db:table="publication">
-    <Attribute id="ent1#att1" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent1#att1" key="true" name="oid_publication" type="integer" db:column="oid"/>
     <Attribute id="ent1#att2" name="Title" type="string" db:column="title" key="false"/>
     <Attribute id="ent1#att4" name="Venue" type="string" db:column="venue" key="false"/>
     <Attribute id="ent1#att6" name="Year" type="integer" db:column="year" key="false"/>
@@ -60,11 +60,11 @@
     <Attribute id="ent1#att9" name="PDF" type="blob" contentType="application/pdf" db:column="pdf"/>
     <Attribute id="ent1#att20" name="First Author" type="string" db:column="first_author"/>
   </Entity>
-  <Entity gr:x="240" gr:y="495" id="ent2" name="Collection" duration="persistent" db:database="db2" db:table="collection" attributeOrder="ent2#att10 ent2#att13 ent2#att14 ent2#att15 ent2#att16">
-    <Attribute id="ent2#att10" key="true" name="oid" type="integer" db:column="oid"/>
+  <Entity gr:x="350" gr:y="485" id="ent2" name="Collection" duration="persistent" db:database="db2" db:table="collection" attributeOrder="ent2#att10 ent2#att13 ent2#att14 ent2#att15 ent2#att16">
+    <Attribute id="ent2#att10" key="true" name="oid_collection" type="integer" db:column="oid"/>
     <Attribute id="ent2#att13" name="Title" type="string" db:column="title"/>
     <Attribute id="ent2#att14" name="Description" type="text" contentType="text/plain" db:column="description"/>
-    <Attribute id="ent2#att15" name="Amount" type="integer" db:column="number"/>
+    <Attribute id="ent2#att15" name="Amount" type="integer" db:column="amount_2"/>
     <Attribute id="ent2#att16" name="Keywords" type="string" db:column="keywords"/>
   </Entity>
   <Relationship id="rel1" name="Author of a publication" sourceEntity="ent1" targetEntity="User" db:database="db2" db:table="writer_and_publication">
@@ -100,7 +100,7 @@
     </RelationshipRole2>
   </Relationship>
   <Entity gr:x="510" gr:y="320" id="ent3" name="Comment" duration="persistent" attributeOrder="ent3#att12 ent3#att17 ent3#att18 ent3#att19" db:database="db2" db:table="comment">
-    <Attribute id="ent3#att12" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent3#att12" key="true" name="oid_comment" type="integer" db:column="oid"/>
     <Attribute id="ent3#att17" name="Title" type="string" db:column="title"/>
     <Attribute id="ent3#att18" name="Timestamp" type="timestamp" db:column="timestamp"/>
     <Attribute id="ent3#att19" name="Content" type="text" contentType="text/html" db:column="content"/>

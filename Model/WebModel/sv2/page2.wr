@@ -6,14 +6,16 @@
         <LinkParameter id="sv2#page2#gtu1#ln39#par32" name="UserCtxParam.oid_RoleCondition9 [oid]" source="sv2#page2#gtu1.UserCtxParam" target="sv2#page2#pwu4#su12#rcond9.userOID"/>
       </Link>
     </GetUnit>
-    <DataUnit gr:x="0" gr:y="105" id="sv2#page2#dau3" name="Researcher Info" entity="User" displayAttributes="email User#att3 User#att5" linkOrder="sv2#page2#dau3#ln34 sv2#page2#dau3#ln35">
+    <DataUnit gr:x="0" gr:y="105" id="sv2#page2#dau3" name="Researcher Info" entity="User" displayAttributes="email User#att3 User#att5" linkOrder="sv2#page2#dau3#ln34 sv2#page2#dau3#ln9">
       <Selector id="sv2#page2#dau3#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page2#dau3#su5#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv2#page2#dau3#ln34" name="New Collection" to="sv2#page10#enu7" type="normal" validate="true">
         <LinkParameter id="sv2#page2#dau3#ln34#par7" name="oid_PASSING" source="data.userOID" passing="true"/>
       </Link>
-      <Link id="sv2#page2#dau3#ln35" name="Upload Publication" to="sv2#page9" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv2#page2#dau3#ln9" name="Upload Publication" to="sv2#page9#enu3" type="normal" validate="true">
+        <LinkParameter id="sv2#page2#dau3#ln9#par33" name="oid_PASSING" source="data.userOID" passing="true"/>
+      </Link>
     </DataUnit>
     <PowerIndexUnit gr:x="140" gr:y="210" id="sv2#page2#pwu4" name="Collection List" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att13 ent2#att14 ent2#att15" linkOrder="sv2#page2#pwu4#ln16">
       <Link id="sv2#page2#pwu4#ln16" name="Details" to="sv2#page3#dau1" type="normal" validate="true">
@@ -47,7 +49,7 @@
           <layout:Attribute attribute="User#att3"/>
           <layout:Attribute attribute="User#att5"/>
           <layout:Link link="sv2#page2#dau3#ln34"/>
-          <layout:Link link="sv2#page2#dau3#ln35"/>
+          <layout:Link link="sv2#page2#dau3#ln9"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

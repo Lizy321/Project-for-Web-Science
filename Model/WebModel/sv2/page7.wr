@@ -1,0 +1,82 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="920" gr:y="0" id="sv2#page7" name="Search Collection" landmark="true">
+  <ContentUnits>
+    <SelectorUnit id="sv2#page7#seu4" name="Search" gr:x="20" gr:y="115" entity="ent2">
+      <Link id="sv2#page7#seu4#ln28" name="Flow20" to="sv2#page7#enu4" type="transport" validate="true">
+        <LinkParameter id="sv2#page7#seu4#ln28#par97" name="oid_collection_Key Condition [oid_collection]" source="ent2#att10Array" target="sv2#page7#enu4.ent2#att10"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit id="sv2#page7#enu4" name="search collection" gr:x="0" gr:y="0" fieldOrder="sv2#page7#enu4#fld12 sv2#page7#enu4#fld14" entity="ent2" linkOrder="sv2#page7#enu4#ln36">
+      <Field id="sv2#page7#enu4#fld12" name="title" type="string" modifiable="true" attribute="ent2#att13"/>
+      <Field id="sv2#page7#enu4#fld14" name="description" type="text" modifiable="true" attribute="ent2#att14"/>
+      <Link id="sv2#page7#enu4#ln36" name="search" to="sv2#page7#pwu8" type="automatic" validate="true">
+        <LinkParameter id="sv2#page7#enu4#ln36#par104" name="description_description" source="sv2#page7#enu4#fld14" target="sv2#page7#pwu8#su13#acond16"/>
+        <LinkParameter id="sv2#page7#enu4#ln36#par105" name="title_title" source="sv2#page7#enu4#fld12" target="sv2#page7#pwu8#su13#acond15"/>
+      </Link>
+    </EntryUnit>
+    <PowerIndexUnit id="sv2#page7#pwu8" name="search collection" linkOrder="sv2#page7#pwu8#ln35" gr:x="175" gr:y="35" sortable="true" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att13 ent2#att14">
+      <Selector id="sv2#page7#pwu8#su13" defaultPolicy="fill" booleanOperator="or">
+        <AttributesCondition id="sv2#page7#pwu8#su13#acond15" name="title" predicate="contains" booleanOperator="or" implied="true" attributes="ent2#att13" ignoreCase="true"/>
+        <AttributesCondition id="sv2#page7#pwu8#su13#acond16" name="description" predicate="contains" booleanOperator="or" implied="true" attributes="ent2#att14" ignoreCase="true"/>
+      </Selector>
+      <Link id="sv2#page7#pwu8#ln35" name="detail" to="sv2#page3#dau1" type="normal" validate="true">
+        <LinkParameter id="sv2#page7#pwu8#ln35#par103" name="oid_collection_KeyCondition1 [oid_collection]" source="data[].ent2#att10" target="sv2#page3#dau1#su1#kcond1.ent2#att10"/>
+      </Link>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page7#enu4">
+          <layout:Field field="sv2#page7#enu4#fld12"/>
+          <layout:Field field="sv2#page7#enu4#fld14"/>
+          <layout:Link link="sv2#page7#enu4#ln36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page7#pwu8">
+          <layout:Attribute attribute="ent2#att13"/>
+          <layout:Attribute attribute="ent2#att14"/>
+          <layout:Link link="sv2#page7#pwu8#ln35"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
