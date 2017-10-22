@@ -1,0 +1,51 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1060" gr:y="420" id="sv2#page12" name="Comment Page" layout:linkVisibilityCondition="sv2#page12#cexpr1">
+  <ContentUnits>
+    <PowerIndexUnit id="sv2#page12#pwu3" name="Comments" linkOrder="sv2#page12#pwu3#ln3" gr:x="0" gr:y="0" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att17 ent3#att18 ent3#att19 rel4#role7.email">
+      <Link id="sv2#page12#pwu3#ln3" name="delete" to="sv2#dlu1" type="normal" validate="true">
+        <LinkParameter id="sv2#page12#pwu3#ln3#par14" name="oid_KeyCondition4 [oid]" source="data[].ent3#att12" target="sv2#dlu1#su4#kcond4.ent3#att12"/>
+      </Link>
+      <DefaultSortAttribute attribute="ent3#att18" order="descending"/>
+      <Selector id="sv2#page12#pwu3#su3" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page12#pwu3#su3#rcond2" name="RoleCondition3" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+    </PowerIndexUnit>
+    <GetUnit id="sv2#page12#gtu2" name="Get7" gr:x="10" gr:y="120" contextParameters="UserCtxParam">
+      <Link id="sv2#page12#gtu2#ln8" name="Flow8" to="sv2#page12#pwu3" type="transport" validate="true">
+        <LinkParameter id="sv2#page12#gtu2#ln8#par16" name="UserCtxParam.oid_researcher_PASSING" source="sv2#page12#gtu2.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page12#pwu3">
+          <layout:Link link="sv2#page12#pwu3#ln3"/>
+          <layout:Attribute attribute="ent3#att17"/>
+          <layout:Attribute attribute="ent3#att18"/>
+          <layout:Attribute attribute="ent3#att19"/>
+          <layout:Attribute attribute="rel4#role7.email"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Variable id="sv2#page12#var6" name="oid_comment_author" type="integer" unitId="sv2#page12#pwu3" parameter="data[].rel4#role7_userOID"/>
+  <Variable id="sv2#page12#var7" name="oid_author" type="integer"/>
+  <ConditionExpression id="sv2#page12#cexpr1" name="is owner">
+    <TextValue xml:space="preserve">oid_author==oid_user</TextValue>
+  </ConditionExpression>
+  <Variable id="sv2#page12#var8" name="oid_user" type="integer" unitId="sv2#page12#gtu2" parameter="sv2#page12#gtu2.UserCtxParam"/>
+  <ConditionExpression id="sv2#page12#cexpr2" name="is author">
+    <TextValue xml:space="preserve">oid_author==oid_user</TextValue>
+  </ConditionExpression>
+</Page>

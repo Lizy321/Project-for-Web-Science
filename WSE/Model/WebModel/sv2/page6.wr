@@ -15,8 +15,9 @@
         <LinkParameter id="sv2#page6#enu2#ln40#par112" name="author_author" source="sv2#page6#enu2#fld10" target="sv2#page6#pwu9#su15#acond19"/>
         <LinkParameter id="sv2#page6#enu2#ln40#par113" name="title_title" source="sv2#page6#enu2#fld8" target="sv2#page6#pwu9#su15#acond18"/>
         <LinkParameter id="sv2#page6#enu2#ln40#par114" name="year_year" source="sv2#page6#enu2#fld9" target="sv2#page6#pwu9#su15#acond20"/>
+        <LinkParameter id="sv2#page6#enu2#ln40#par115" name="keyword_keyword" source="sv2#page6#enu2#fld21" target="sv2#page6#pwu9#su15#acond22"/>
       </Link>
-      <Field id="sv2#page6#enu2#fld21" name="keyword" type="string" modifiable="true"/>
+      <Field id="sv2#page6#enu2#fld21" name="keyword" type="string" modifiable="true" attribute="ent1#att8"/>
     </EntryUnit>
     <PowerIndexUnit id="sv2#page6#pwu9" name="search publication" linkOrder="sv2#page6#pwu9#ln38" gr:x="150" gr:y="10" sortable="true" checkable="false" useCountQuery="false" entity="ent1" displayAttributes="ent1#att2 ent1#att8 ent1#att20">
       <Selector id="sv2#page6#pwu9#su15" defaultPolicy="fill" booleanOperator="or">
@@ -24,6 +25,7 @@
         <AttributesCondition id="sv2#page6#pwu9#su15#acond19" name="author" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent1#att20"/>
         <AttributesCondition id="sv2#page6#pwu9#su15#acond20" name="year" predicate="eq" booleanOperator="or" implied="true" attributes="ent1#att6"/>
         <AttributesCondition id="sv2#page6#pwu9#su15#acond21" name="abstract" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att7" ignoreCase="true"/>
+        <AttributesCondition id="sv2#page6#pwu9#su15#acond22" name="keyword" predicate="contains" booleanOperator="or" implied="true" ignoreCase="true" attributes="ent1#att8"/>
       </Selector>
       <Link id="sv2#page6#pwu9#ln38" name="detail" to="sv2#page11#dau5" type="normal" validate="true">
         <LinkParameter id="sv2#page6#pwu9#ln38#par110" name="oid_publication_KeyCondition2 [oid_publication]" source="data[].ent1#att1" target="sv2#page11#dau5#su14#kcond7.ent1#att1"/>

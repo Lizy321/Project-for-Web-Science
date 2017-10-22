@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="920" gr:y="0" id="sv2#page7" name="Search Collection" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="720" gr:y="40" id="sv2#page7" name="Search Collection" landmark="true">
   <ContentUnits>
     <SelectorUnit id="sv2#page7#seu4" name="Search" gr:x="20" gr:y="115" entity="ent2">
       <Link id="sv2#page7#seu4#ln28" name="Flow20" to="sv2#page7#enu4" type="transport" validate="true">

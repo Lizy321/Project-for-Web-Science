@@ -1,8 +1,8 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Researcher" landmarks="sv2#page2 sv2#page6 sv2#lou1 sv2#page7" homePage="sv2#page2">
   <OperationUnits>
     <LogoutUnit gr:x="280" gr:y="10" id="sv2#lou1" name="Logout" siteView="sv1" landmark="true"/>
-    <CreateUnit id="sv2#cru1" name="Create Comments" gr:x="695" gr:y="655" entity="ent3" skipBlankRecords="false"/>
-    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="90" gr:y="645" entity="ent1">
+    <CreateUnit id="sv2#cru1" name="Create Comments" gr:x="790" gr:y="680" entity="ent3" skipBlankRecords="false"/>
+    <CreateUnit id="sv2#cru2" name="Create publication" gr:x="70" gr:y="670" entity="ent1">
       <OKLink id="sv2#cru2#oln7" name="OKFlow7" to="sv2#cnu1">
         <LinkParameter id="sv2#cru2#oln7#par64" name="oid_publication_KeyCondition5 [oid_publication] [Publication] [Source]" source="ent1#att1Array" target="sv2#cnu1#su7#kcond5.ent1#att1"/>
         <LinkParameter id="sv2#cru2#oln7#par66" name="Save to..._PASSING_KeyCondition6 [oid_collection] [Collection] [Target]" sourceLinkParameter="sv2#page9#enu3#ln27#par65" target="sv2#cnu1#su8#kcond6.ent2#att10"/>
